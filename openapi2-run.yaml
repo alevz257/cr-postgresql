@@ -1,0 +1,31 @@
+# openapi2-run.yaml
+swagger: '2.0'
+info:
+  title: api-cloudrun-db
+  description: Sample API on API Gateway with a Cloud Run backend
+  version: 1.0.0
+schemes:
+- https
+produces:
+- application/json
+x-google-backend:
+  address: https://simpledb-fwg77miopa-as.a.run.app
+paths:
+    /read:
+      get:
+        summary: Cloud Run hello world
+        operationId: hello
+        responses:
+          '200':
+            description: A successful response
+            schema:
+              type: string
+    /add:
+      get:
+        summary: Cloud Run adding data to postgre
+        operationId: add hello
+        responses:
+          '200':
+            description: A successful response
+            schema:
+              type: string
